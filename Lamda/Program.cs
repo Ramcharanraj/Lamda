@@ -8,14 +8,15 @@ namespace Lamda
     {
         static void Main(string[] args)
         {
+
             List<Lamdapra> listPersonCity = new List<Lamdapra>();
             AddRecords(listPersonCity);
 
-            //Retrieving_Top_TwoRecord_For_LessthanSixty(listPersonCity);\
+            //Retrieving_Top_TwoRecord_For_LessthanSixty
             Retrieving_Top_TwoRecord_For_LessthanSixty(listPersonCity);
+
+            // checkingForTeenagerPersons
             CheckingForTeenagerPerson(listPersonCity);
-
-
 
 
         }
@@ -45,7 +46,6 @@ namespace Lamda
             }
         }
 
-
         //UC3
         private static void CheckingForTeenagerPerson(List<Lamdapra> listPersonInCity)
         {
@@ -58,5 +58,7 @@ namespace Lamda
                 Console.WriteLine("NO , we dont have any teen-agers in the list");
             }
         }
+
+        //UC4
     }
 }

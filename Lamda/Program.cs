@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Lamda
 {
@@ -10,11 +11,16 @@ namespace Lamda
             List<Lamdapra> listPersonCity = new List<Lamdapra>();
             AddRecords(listPersonCity);
 
-            
+            //Retrieving_Top_TwoRecord_For_LessthanSixty(listPersonCity);\
+            Retrieving_Top_TwoRecord_For_LessthanSixty(listPersonCity);
+            CheckingForTeenagerPerson(listPersonCity);
+
+
+
 
         }
 
-       
+
 
         //UC 1
         private static void AddRecords(List<Lamdapra> listPersoncity)
@@ -28,6 +34,29 @@ namespace Lamda
             listPersoncity.Add(new Lamdapra("202324098", "Winston", "89 Main Statement", "NewYork", 65));
             listPersoncity.Add(new Lamdapra("202324098", "Mac", "89 Main Statement", "NewYork", 85));
             listPersoncity.Add(new Lamdapra("202324098", "Sam", "89 Main Statement", "NewYork", 95));
+        }
+
+        //UC 2
+        private static void Retrieving_Top_TwoRecord_For_LessthanSixty(List<Lamdapra> listPersonsInCity)
+        {
+            foreach (Lamdapra person in listPersonsInCity.FindAll(e => (e.Age < 68)).Take(2).ToList())
+            {
+                Console.WriteLine("Name :" + person.Name + " \t\t Age: " + person.Age);
+            }
+        }
+
+
+        //UC3
+        private static void CheckingForTeenagerPerson(List<Lamdapra> listPersonInCity)
+        {
+            if (listPersonInCity.Any(e => e.Age >= 13 && e.Age < 19))
+            {
+                Console.WriteLine("Yes, we have some teen-agers in the list");
+            }
+            else
+            {
+                Console.WriteLine("NO , we dont have any teen-agers in the list");
+            }
         }
     }
 }

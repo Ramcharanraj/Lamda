@@ -18,6 +18,9 @@ namespace Lamda
             // checkingForTeenagerPersons
             CheckingForTeenagerPerson(listPersonCity);
 
+            //Average_age_in_list
+            Average_age_in_list(listPersonCity);
+
 
         }
 
@@ -60,5 +63,9 @@ namespace Lamda
         }
 
         //UC4
+        private static void Average_age_in_list(List<Lamdapra> listPersonIncity)
+        {
+
+        }
     }
 }
